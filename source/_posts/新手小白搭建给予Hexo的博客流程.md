@@ -1,3 +1,14 @@
+---
+title: 新手小白搭建基于Hexo的博客流程
+auth: charmingYouYou
+categories: 
+- 博客
+tags: 
+- hexo
+- 域名
+- github Page
+- markDown
+---
 # 新手小白搭建基于Hexo的博客流程
 
 >
