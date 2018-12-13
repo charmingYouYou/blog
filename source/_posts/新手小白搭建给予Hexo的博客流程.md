@@ -40,3 +40,15 @@ tags:
 
 
 ## Hexo
+
+> Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 [Markdown](http://daringfireball.net/projects/markdown/)（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
+
+* ##### [官方文档](https://hexo.io/zh-cn/)
+
+* ##### 安装Hexo
+
+  在准备放置博客的文件夹下执行`git bash here`打开终端后执行`npm install -g hexo-cli --registry=https://registry.npm.taobao.org`(mac用户请在root下执行该语句)
+
+![hexo安装成功](https://user-gold-cdn.xitu.io/2018/1/20/161117c728dda55c?imageView2/0/w/1280/h/960/)
+
+* ##### 初始化hexo
