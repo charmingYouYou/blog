@@ -1,5 +1,6 @@
 ---
-title: typeScript学习笔记
+title: TypeScript学习笔记系列(一)---基础类型
+date: 2018/12/14 17:15:15
 auth: charmingYouYou
 categories: 
 - typescript
@@ -8,9 +9,9 @@ tags:
 - 类型检测
 ---
 
-# TypeScript学习笔记
-
-> typeScript是js的超集, 具有类型检测功能
+> `typeScript`是`javascript`的类型的超集, 它可以编译成纯`javascript`
+>
+> `typescript`可以在任何浏览器、任何计算机和任何操作系统上运行, 并且是开源的
 
 ## 初始准备
 
@@ -193,5 +194,79 @@ tags:
     }
     ```
 
-  * 参考来源: [深入理解TypeScript](https://jkchao.github.io/typescript-book-chinese/typings/enums.html#%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E6%9E%9A%E4%B8%BE%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B)
+* ##### any
 
+  > 顾名思义, `any`代表该变量可以为任何类型, `typescript`跳过该变量类型检测
+
+  ```typescript
+  let number: any = 1
+  let string: any = '1'
+  ```
+
+* ##### void
+
+  > 函数无返回值其返回类型为`void`
+  >
+  > 声明一个void类型的变量没有什么大用，因为你只能为它赋予`undefined`和`null`
+
+  ```typescript
+  let fun = (): void => {
+    console.log('fun')
+  }
+  let unusable: void = null    
+  ```
+
+* ##### undefined & null
+
+  ```typescript
+  let u: undefined = undefined;
+  let n: null = null;
+  ```
+
+* ##### never
+
+  > `never`类型表示的是那些永不存在的值的类型。
+
+  ```typescript
+  // 返回never的函数必须存在无法达到的终点
+  function error(message: string): never {
+      throw new Error(message);
+  }
+  
+  // 推断的返回值类型为never
+  function fail() {
+      return error("Something failed");
+  }
+  
+  // 返回never的函数必须存在无法达到的终点
+  function infiniteLoop(): never {
+      while (true) {
+      }
+  }
+  ```
+
+* ##### object
+
+  ```typescript
+  let obj: object = {}
+  ```
+
+
+
+## 总结
+
+​	以上就是对typescript的基础类型进行的一些简单的总结, 可以看到ts在原生js已有的类型上, 加入了元组, 枚举.
+
+​	在别的语言中, 枚举类型是强类型的，从而保证了系统安全性。枚举可以限定参数的个数，对调用者的行为能更加严格地进行控制。**把一些运行期的参数检查放到了编译期**，这点很重要。
+
+​	同样元组也是**预先定义数组的长度以及类型**, 可以替开发者在赋值时进行检测.
+
+​	 ts使js这门弱类型语言有了强类型的属性, 也体现了ts的一个核心原则: 对值所具有结构进行**类型检查**
+
+
+
+## 参考
+
+* [官方文档-基础类型](https://www.tslang.cn/docs/handbook/basic-types.html)
+
+* [深入理解TypeScript](https://jkchao.github.io/typescript-book-chinese/typings/enums.html#%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E6%9E%9A%E4%B8%BE%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B)
